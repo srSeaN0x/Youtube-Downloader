@@ -1,4 +1,4 @@
-import pytube; import os; import shutil; from moviepy.editor import *
+import pytube; import os; from moviepy.editor import *
 
 url = str(input('Digite a URL do vídeo: '))
 yt = pytube.YouTube(url)
