@@ -18,11 +18,12 @@ try:
     clip = VideoFileClip(join)
     audio = clip.audio
     nome_novo = audio.write_audiofile(join + '.mp3')
-    os.remove(f'{yt.title}.mp4')
+    nome_arquivo = f'''{yt.title.replace("'", '')}.mp4'''
+    os.remove(nome_arquivo)
     os.system('clear') # mesma coisa do primeiro comentário
     msg_sucesso = f'Áudio do vídeo "{yt.title}" baixado com sucesso.'
     print(Fore.BLACK + msg_sucesso)
 
 except TypeError as erro:
-  msg_erro = f'Houve um erro na entrada de dados. Tente novamente. (Erro: {erro})'
+  msg_erro = f'Houve um erro. Tente novamente. (Erro: {erro})'
   print(Fore.RED + msg_erro)
