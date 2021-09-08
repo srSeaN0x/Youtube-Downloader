@@ -1,4 +1,6 @@
-import pytube; import os; from moviepy.editor import *; from colorama import Fore
+import pytube; import os; from moviepy.editor import *; from colorama import Fore, init
+
+colorama.init(autoreset = True)
 
 try:
   os.system('clear') # caso seu OS não seja windows e tenha dado erro mude para "cls" 
