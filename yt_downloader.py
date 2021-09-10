@@ -26,6 +26,6 @@ try:
     msg_sucesso = f'Áudio do vídeo "{yt.title}" baixado com sucesso.'
     print(Fore.BLACK + msg_sucesso)
 
-except TypeError as erro:
-  msg_erro = f'Houve um erro. Tente novamente. (Erro: {erro})'
+except:
+  msg_erro = f'Houve um erro :(.'
   print(Fore.RED + msg_erro)
