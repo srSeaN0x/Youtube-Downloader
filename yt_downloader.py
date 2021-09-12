@@ -20,12 +20,12 @@ try:
     clip = VideoFileClip(join)
     audio = clip.audio
     nome_novo = audio.write_audiofile(str(join).replace('mp4', 'mp3'))
-    nome_arquivo = f'''{yt.title.replace("'", '')}.mp4'''
+    nome_arquivo = f'''{yt.title.replace("." if '.' in yt.title else "'", '')}.mp4'''
     os.remove(nome_arquivo)
     os.system('clear' if os.name != 'nt' else 'cls') 
     msg_sucesso = f'Áudio do vídeo "{yt.title}" baixado com sucesso.'
     print(Fore.BLACK + msg_sucesso)
 
-except:
+except Exception as error:
   msg_erro = f'Houve um erro :(.'
-  print(Fore.RED + msg_erro)
+  print(Fore.RED + msg_erro + ': ', error)
