@@ -3,7 +3,7 @@ import pytube; import os; from moviepy.editor import *; from colorama import For
 init(autoreset = True)
 
 try:
-  os.system('cls') # caso seu OS não seja windows e tenha dado erro mude para "clear" 
+  os.system('clear' if os.name != 'nt' else 'cls') 
   url = str(input(Fore.MAGENTA + 'Digite a URL do vídeo: '))
   yt = pytube.YouTube(url)
   formato = str(input(Fore.MAGENTA + 'Deseja baixar o vídeo no formato MP3 ou MP4?: ')).upper()
@@ -19,10 +19,10 @@ try:
     join = os.path.join(download)
     clip = VideoFileClip(join)
     audio = clip.audio
-    nome_novo = audio.write_audiofile(join + '.mp3')
+    nome_novo = audio.write_audiofile(str(join).replace('mp4', 'mp3'))
     nome_arquivo = f'''{yt.title.replace("'", '')}.mp4'''
     os.remove(nome_arquivo)
-    os.system('cls') # mesma coisa do primeiro comentário
+    os.system('clear' if os.name != 'nt' else 'cls') 
     msg_sucesso = f'Áudio do vídeo "{yt.title}" baixado com sucesso.'
     print(Fore.BLACK + msg_sucesso)
 
