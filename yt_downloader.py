@@ -1,4 +1,7 @@
-import pytube; import os; from moviepy.editor import *; from colorama import Fore, init
+import pytube
+import os
+from moviepy.editor import *
+from colorama import Fore, init
 
 init(autoreset = True)
 
