@@ -9,7 +9,7 @@ try:
   os.system('clear' if os.name != 'nt' else 'cls') 
   url = str(input(Fore.MAGENTA + 'Digite a URL do vídeo: '))
   yt = pytube.YouTube(url)
-  formato = str(input(Fore.MAGENTA + 'Deseja baixar o vídeo no formato MP3 ou MP4?: ')).upper()
+  formato = str(input(Fore.MAGENTA + 'Deseja baixar o vídeo no formato MP3 ou MP4?: ')).strip().upper()
 
   if formato == 'MP4':
     video = yt.streams.get_highest_resolution()
