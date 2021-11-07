@@ -42,12 +42,12 @@ try:
       continue
 
     elif formato not in ('MP4', 'MP3'):
-      MSG_ERRO = f'Você digitou algo errado, ou o programa não tem opções para esse formato.'
+      MSG_ERRO = 'Você digitou algo errado, ou o programa não tem opções para esse formato.'
       print(Fore.RED + MSG_ERRO)
       sleep(4.4)
       clear()
       continue
 
 except Exception as error:
-  msg_erro = f'Houve um erro :(.'
+  msg_erro = 'Houve um erro :(.'
   print(Fore.RED + msg_erro + ': ', error)
